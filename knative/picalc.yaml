@@ -1,0 +1,12 @@
+apiVersion: serving.knative.dev/v1alpha1
+kind: Service
+metadata:
+  name: picalc
+  namespace: tekton-pipelines
+spec:
+  runLatest:
+    configuration:
+      revisionTemplate:
+        spec:
+          container:
+            image: __IMAGE__
